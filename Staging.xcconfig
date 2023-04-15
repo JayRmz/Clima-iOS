@@ -1,0 +1,13 @@
+//
+//  Staging.xcconfig
+//  Clima
+//
+//  Created by Juan Manuel on 15/04/23.
+//  Copyright © 2023 App Brewery. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+OPENWEATHER_URL = https:\/\/api.openweathermap.org/data/2.5/weather?
+OPENWEATHER_API = ${OPENWEATHER API KEY}

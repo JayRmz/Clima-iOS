@@ -16,18 +16,21 @@ protocol WeatherManagerDelegate {
 }
 
 
-struct WeatherManager {
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=faa0bdc1e6007779272d2492b5f90ccd&units=metric"
-    
+struct WeatherManager {    
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String) {
-        let urlString = "\(weatherURL)&q=\(cityName)"
+        let urlString = "\(infoForKey("OpenWeatherUrl")!)appid=\(infoForKey("OpenWeatherAPI")!)&q=\(cityName)&units=metric"
         performRequest(with: urlString)
     }
     
+    func infoForKey(_ key: String) -> String? {
+            return (Bundle.main.infoDictionary?[key] as? String)?
+                .replacingOccurrences(of: "\\", with: "")
+     }
+    
     func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
+        let urlString = "\(infoForKey("OpenWeatherUrl")!)appid=\(infoForKey("OpenWeatherAPI")!)&lat=\(latitude)&lon=\(longitude)&units=metric"
         performRequest(with: urlString)
     }
     
