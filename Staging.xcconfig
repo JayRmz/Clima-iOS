@@ -10,4 +10,4 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 OPENWEATHER_URL = https:\/\/api.openweathermap.org/data/2.5/weather?
-OPENWEATHER_API = ${OPENWEATHER API KEY}
+OPENWEATHER_API = ${KEY}
